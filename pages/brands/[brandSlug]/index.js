@@ -2,7 +2,11 @@ import { useRouter } from 'next/router'
 
 export async function getStaticPaths() {
     return {
-        paths: [{ params: { slug: 'toyota-innova' } }, { params: { slug: 'toyota-corolla' } }],
+        paths: [
+            { params: { brandSlug: 'toyota' } },
+            { params: { brandSlug: 'mitsubishi' } },
+            { params: { brandSlug: 'suzuki' } }
+        ],
         fallback: false,
     };
 }
@@ -19,15 +23,16 @@ export async function getStaticProps() {
     };
 }
 
-const VehicleDetails = () => {
+const Brand = ({ brands }) => {
 
     const router = useRouter()
-    console.log(router.query, "hahaha")
+    console.log(brands)
 
     return (
-        <p>Showing Vehicle details of {`${router.query.slug}`}</p>
-        // <div>{`Showing details of brand  ${router.query.brandSlug} and vehicle ${router.query.vehicleSlug}`}</div>
+        <div>
+            <p>Showing all vehicles of {router.query.brandSlug}</p>
+        </div>
     )
 }
 
-export default VehicleDetails
+export default Brand
