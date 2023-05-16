@@ -24,7 +24,8 @@ const Brands = ({ brands }) => {
                             <Link
                                 key={brand._id}
                                 href={`brands/${brand.slug}`}
-                                className='brand'>
+                                className='brand'
+                            >
                                 {brand.name}
                             </Link>
                         )

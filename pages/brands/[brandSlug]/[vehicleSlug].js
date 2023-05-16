@@ -7,6 +7,7 @@ export async function getStaticPaths() {
             { params: { brandSlug: 'toyota', vehicleSlug: 'toyota-corolla' } },
             { params: { brandSlug: 'mitsubishi', vehicleSlug: 'mitsubishi-mirage-g4' } },
             { params: { brandSlug: 'suzuki', vehicleSlug: 'suzuki-swift' } },
+            { params: { brandSlug: 'geely', vehicleSlug: 'geely-coolray' } },
         ],
         fallback: false,
     };
